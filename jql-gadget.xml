@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="SQL Gadget"
+  description="SQL Gadget Tutorial" 
+  author="Mauricio Munoz" 
+  author_email="mauricio.pelco@gmail.com">
+    <Optional feature="gadget-directory">
+      <Param name="categories">JIRA</Param>
+    </Optional>
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
+    Hello world!
+    ]]>
+  </Content>
+</Module>
