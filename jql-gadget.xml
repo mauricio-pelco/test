@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="SQL Gadget"
-  description="SQL Gadget Tutorial" 
+  <ModulePrefs title="JQL Gadget"
+  description="JQL Gadget Tutorial" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
     <Optional feature="gadget-directory">
@@ -11,6 +11,8 @@
   <Content type="html">
     <![CDATA[
 	Hello World!
+		<div id="main" style="display: none">
+		</div>
     ]]>
   </Content>
 </Module>
