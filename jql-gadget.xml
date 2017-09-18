@@ -13,6 +13,11 @@
 	Hello World!
 		<div id="main" style="display: none">
 		</div>
+		
+		<div id="approval" style="display: none">
+		  <img src="http://svn.atlassian.com/svn/public/contrib/tutorials/jira-standalone-jql-gadget/static/images/new.gif">
+		  <a href="#" id="personalize">Personalize this gadget</a>
+		</div>
     ]]>
   </Content>
 </Module>
