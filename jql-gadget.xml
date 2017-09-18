@@ -18,6 +18,7 @@
   </ModulePrefs>
   <Content type="html">
     <![CDATA[
+		Hello World! 
 		<!-- shindig oauth popup handling code -->
 		<script src="http://svn.atlassian.com/svn/public/contrib/tutorials/jira-standalone-jql-gadget/static/js/popup.js"></script>
 
