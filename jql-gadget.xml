@@ -4,116 +4,18 @@
   description="JQL Gadget Tutorial" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
+	<Optional feature="atlassian.util" />
     <Optional feature="gadget-directory">
       <Param name="categories">JIRA</Param>
     </Optional>
     <Require feature="oauthpopup" />
-    <OAuth>
-    	<Service>
-    		<Access url="http://localhost:8080/plugins/servlet/oauth/access-token" method="POST" />
-    		<Request url="http://localhost:8080/plugins/servlet/oauth/request-token" method="POST" />
-    		<Authorization url="http://localhost:8080/plugins/servlet/oauth/authorize?oauth_callback=http%3A%2F%2Foauth.gmodules.com%2Fgadgets%2Foauthcallback" />
-    	</Service>
-    </OAuth>
+	#oauth
   </ModulePrefs>
   <Content type="html">
     <![CDATA[
+	#requireResource("com.atlassian.gadgets.publisher:ajs-gadgets")
+	#includeResources()
 	Hello World!
-		<!-- shindig oauth popup handling code -->
-		<script src="http://svn.atlassian.com/svn/public/contrib/tutorials/jira-standalone-jql-gadget/static/js/popup.js"></script>
-		
-		<div id="main" style="display: none">
-		</div>
-		
-		<div id="approval" style="display: none">
-		  <img src="http://svn.atlassian.com/svn/public/contrib/tutorials/jira-standalone-jql-gadget/static/images/new.gif">
-		  <a href="#" id="personalize">Personalize this gadget</a>
-		</div>
-		
-		<div id="waiting" style="display: none">
-		  Please click
-		  <a href="#" id="approvaldone">I've approved access</a>
-		  once you've approved access to your data.
-		</div>
-		
-		<script type="text/javascript">
-		
-		  function showOneSection(toshow) {
-		    var sections = [ 'main', 'approval', 'waiting' ];
-		    for (var i=0; i < sections.length; ++i) {
-		      var s = sections[i];
-		      var el = document.getElementById(s);
-		      if (s === toshow) {
-		        el.style.display = "block";
-		      } else {
-		        el.style.display = "none";
-		      }
-		    }
-		  }
-		  
-		  function showResults(result) {
-		    showOneSection('main');
-
-		    var titleElement = document.createElement('div');
-		    var nameNode = document.createTextNode(result.description);
-			document.getElementById("main").appendChild(nameNode);
-			document.getElementById("main").appendChild(document.createElement("br"));
-
-
-		    var bodyNode = document.createElement("div");
-		    bodyNode.innerHTML = result.table;
-			document.getElementById("main").appendChild(bodyNode);
-		  }
-		  
-		  function fetchData() {
-		    var params = {};
-		    url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
-		    url = url + escape("assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC, created ASC");
-
-		    params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-		    params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.OAUTH;
-		    params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
-
-		    gadgets.io.makeRequest(url, function (response) {
-		      if (response.oauthApprovalUrl) {
-		        // Create the popup handler. The onOpen function is called when the user
-		        // opens the popup window. The onClose function is called when the popup
-		        // window is closed.
-		        var popup = shindig.oauth.popup({
-		          destination: response.oauthApprovalUrl,
-		          windowOptions: null,
-		          onOpen: function() { showOneSection('waiting'); },
-		          onClose: function() { fetchData(); }
-		        });
-		        // Use the popup handler to attach onclick handlers to UI elements.  The
-		        // createOpenerOnClick() function returns an onclick handler to open the
-		        // popup window.  The createApprovedOnClick function returns an onclick
-		        // handler that will close the popup window and attempt to fetch the user's
-		        // data again.
-		        var personalize = document.getElementById('personalize');
-		        personalize.onclick = popup.createOpenerOnClick();
-		        var approvaldone = document.getElementById('approvaldone');
-		        approvaldone.onclick = popup.createApprovedOnClick();
-		        showOneSection('approval');
-		      } else if (response.data) {
-		        showOneSection('main');
-		        showResults(response.data);
-		      } else {
-		        // The response.oauthError and response.oauthErrorText values may help debug
-		        // problems with your gadget.
-		        var main = document.getElementById('main');
-		        var err = document.createTextNode('OAuth error: ' +
-		          response.oauthError + ': ' + response.oauthErrorText);
-		        main.appendChild(err);
-		        showOneSection('main');
-		      }
-		    }, params);
-		  }
-		  // Call fetchData() when gadget loads.
-		  gadgets.util.registerOnLoadHandler(fetchData);
-			
-			
-		</script>
     ]]>
   </Content>
 </Module>
