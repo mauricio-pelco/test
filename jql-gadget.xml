@@ -15,7 +15,24 @@
     <![CDATA[
 	#requireResource("com.atlassian.gadgets.publisher:ajs-gadgets")
 	#includeResources()
-	Hello World!
+	<script type="text/javascript">
+      (function () {
+        /* (2) Construct and initialise the gadget */
+        var gadget = AJS.Gadget({
+          baseUrl: "__ATLASSIAN_BASE_URL__", /* (3) Used to make base url available to gadget */
+		  useOath: "/rest/gadget/1.0/currentUser"
+        });
+      })();
+	  AJS.$.ajax({
+		url: "/rest/gadget/1.0/filtersAndProjects",
+		type: "GET",
+		data: ({projectsOnly : "true"}),
+		dataType: "json",
+		success: function(msg) {
+			alert(msg);
+			}
+		});
+    </script>
     ]]>
   </Content>
 </Module>
