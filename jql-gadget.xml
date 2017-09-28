@@ -9,12 +9,13 @@
       <Param name="categories">JIRA</Param>
     </Optional>
     <Require feature="oauthpopup" />
-	#oauth
+	#oauth	
+	#requireResource("com.atlassian.gadgets.publisher:ajs-gadgets")
+	#includeResources()
   </ModulePrefs>
   <Content type="html">
     <![CDATA[
-	#requireResource("com.atlassian.gadgets.publisher:ajs-gadgets")
-	#includeResources()
+
 	<script type="text/javascript">
       (function () {
         /* (2) Construct and initialise the gadget */
