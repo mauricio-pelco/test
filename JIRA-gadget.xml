@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs title="__MSG_gadget.title__" directory_title="__MSG_gadget.title__"
+        description="__MSG_gadget.description__">
+        <Optional feature="gadget-directory">
+            <Param name="categories">
+                JIRA
+            </Param>
+        </Optional>
+        <Optional feature="atlassian.util" />
+        <Optional feature="auth-refresh" />
+        <Require feature="views" />
+        <Require feature="settitle"/>
+        <Require feature="oauthpopup" />
+        #oauth
+        <Locale messages="__ATLASSIAN_BASE_URL__/download/resources/jira-gadget-tutorial-plugin/i18n/ALL_ALL.xml"/>
+    </ModulePrefs>
+    <Content type="html" view="profile">
+        <!-- omitted for now -->
+    </Content>
+ </Module>
