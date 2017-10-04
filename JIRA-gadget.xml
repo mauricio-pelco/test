@@ -26,6 +26,7 @@
 				
 				var titleElement = document.createElement('div');
 				var nameNode = document.createTextNode("This will be added");
+				document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(nameNode);
 				
 				
