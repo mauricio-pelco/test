@@ -21,24 +21,13 @@
 				el.style.display = "block";
 			}
 			
-			function displayBasic(){
-				var d = new Date();
-				var out = d.now();
-			}
-			
 			function showResults() {
 				showSection('main');
-				var d = new Date();
-				var out = d.now();
 				
 				var titleElement = document.createElement('div');
 				var nameNode = document.createTextNode("This will be added");
 				document.getElementById("main").appendChild(nameNode);
-				document.getElementById("main").appendChild(document.createElement("br"));
 				
-				var bodyNode = document.createElement("div");
-				bodyNode.innerHTML = "hello";
-				document.getElementById("main").appendChild(bodyNode);
 				
 			}
 			
