@@ -36,6 +36,9 @@
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
 				
+				var bodyNode = document.createElement("div");
+				bodyNode.innerHTML = "hello";
+				document.getElementById("main").appendChild(bodyNode);
 				
 			}
 			
