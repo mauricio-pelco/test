@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Standalone Gadget1"
+  <ModulePrefs title="Standalone Gadget"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -27,6 +27,7 @@
 			}
 			
 			function showResults() {
+				showSection('main');
 				var d = new Date();
 				var out = d.now();
 				
@@ -35,7 +36,7 @@
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
 				
-				showSection('main');
+				
 			}
 			
 			showResults();
