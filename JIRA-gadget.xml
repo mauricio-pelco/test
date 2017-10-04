@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Standalone Gadget2"
+  <ModulePrefs title="Standalone Gadget"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -10,12 +10,25 @@
   </ModulePrefs>
   <Content type="html">
     <![CDATA[
+	
+		<div id="main" style="display: none">
+			hello world!
+		
+		</div>
+	
 		<script type="text/javascript">
-			function displayBasic(d, out){
-				d = new Date();
-				out = d.now();
+			function showSection(section){
+				var el = document.getElementById(section);
+				el.style.display = "block";
+			}
+			
+			function displayBasic(){
+				var d = new Date();
+				var out = d.now();
 			}
 		</script>
+		
+		
     ]]>
   </Content>
 </Module>
