@@ -10,9 +10,6 @@
   </ModulePrefs>
   <Content type="html">
     <![CDATA[
-    <!-- shindig oauth popup handling code -->
-		<script src="http://svn.atlassian.com/svn/public/contrib/tutorials/jira-standalone-jql-gadget/static/js/popup.js"></script>
-
 		<div id="main" style="display: none">
 		</div>
 
@@ -81,29 +78,19 @@
 		    url = url + escape("assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC, created ASC");
 
 		    params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-		    params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.OAUTH;
 		    params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
 
 		    gadgets.io.makeRequest(url, function (response) {
-		      if (response.oauthApprovalUrl) {
+		      if ("this" == "this") {
 		        // Create the popup handler. The onOpen function is called when the user
 		        // opens the popup window. The onClose function is called when the popup
 		        // window is closed.
-		        var popup = shindig.oauth.popup({
-		          destination: response.oauthApprovalUrl,
-		          windowOptions: null,
-		          onOpen: function() { showOneSection('waiting'); },
-		          onClose: function() { fetchData(); }
-		        });
+
 		        // Use the popup handler to attach onclick handlers to UI elements.  The
 		        // createOpenerOnClick() function returns an onclick handler to open the
 		        // popup window.  The createApprovedOnClick function returns an onclick
 		        // handler that will close the popup window and attempt to fetch the user's
 		        // data again.
-		        var personalize = document.getElementById('personalize');
-		        personalize.onclick = popup.createOpenerOnClick();
-		        var approvaldone = document.getElementById('approvaldone');
-		        approvaldone.onclick = popup.createApprovedOnClick();
 		        showOneSection('approval');
 		      } else if (response.data) {
 		        showOneSection('main');
@@ -112,10 +99,7 @@
 		        // The response.oauthError and response.oauthErrorText values may help debug
 		        // problems with your gadget.
 		        var main = document.getElementById('main');
-		        var err = document.createTextNode('OAuth error: ' +
-		          response.oauthError + ': ' + response.oauthErrorText);
-		        main.appendChild(err);
-		        showOneSection('main');
+
 		      }
 		    }, params);
 		  }
