@@ -27,8 +27,6 @@
 			}
 			
 			function showResults() {
-				showSection('main');
-				
 				var d = new Date();
 				var out = d.now();
 				
@@ -37,6 +35,7 @@
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
 				
+				showSection('main');
 			}
 			
 			showResults();
