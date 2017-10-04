@@ -31,7 +31,7 @@
 				var out = d.now();
 				
 				var titleElement = document.createElement('div');
-				var nameNode = document.createTextNode(out);
+				var nameNode = document.createTextNode("This will be added");
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
 				
