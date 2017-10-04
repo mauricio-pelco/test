@@ -24,10 +24,20 @@
 			function displayBasic(){
 				var d = new Date();
 				var out = d.now();
-				showSection('main');
 			}
 			
-			showSection('main');
+			function showResults(result) {
+				showSection('main');
+				
+				var d = new Date();
+				var out = d.now();
+				
+				var titleElement = document.createElement('div');
+				var nameNode = document.createTextNode(out);
+				document.getElementById("main").appendChild(nameNode);
+				document.getElementById("main").appendChild(document.createElement("br"));
+				
+			}
 		</script>
 		
 		
