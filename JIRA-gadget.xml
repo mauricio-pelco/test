@@ -46,7 +46,7 @@
 			
 			}
 			
-			showResults();
+			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
 		
 		
