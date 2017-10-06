@@ -34,7 +34,7 @@
 			
 				var params = {};
 				url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
-				url = url + escape(assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC, created ASC");
+				url = url + escape("assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC, created ASC");
 				
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
