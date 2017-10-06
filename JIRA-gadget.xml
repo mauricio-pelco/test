@@ -36,8 +36,8 @@
 			
 			function fetchData(){
 				showSection('main');
-//				
-//				var params = {};
+				
+				var params = {};
 //				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
 //				url = url + escape("assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC");
 //				
