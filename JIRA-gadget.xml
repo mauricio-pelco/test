@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs title="Standalone Gadget"
-  description="Attempting to create a standalone JQL gadget" 
+  description="Attempting to create a standalone JQL gadget3" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
     <Optional feature="gadget-directory">
@@ -24,10 +24,26 @@
 			function showResults() {
 				showSection('main');
 				
-				var nameNode = document.createTextNode("This will be added");
+				var nameNode = document.createTextNode(result.description);
 				document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(nameNode);
 				
+			}
+			
+			function fetchData(){
+			
+				var params = {};
+				url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
+				url = url + escape(assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC, created ASC");
+				
+				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+				params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
+				
+				 gadgets.io.makeRequest(url, function (response){
+					showResults(response.data);
+				 }
+			
+			
 			}
 			
 			showResults();
