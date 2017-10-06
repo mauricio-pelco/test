@@ -21,7 +21,7 @@
 				el.style.display = "block";
 			}
 			
-			function showResults() {
+			function showResults(result) {
 				showSection('main');
 				
 				var nameNode = document.createTextNode(result.description);
