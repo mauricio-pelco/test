@@ -34,22 +34,22 @@
 				
 			}
 			
-			function fetchData(){
-				showSection('main');
-				
-				var params = {};
-				url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
-				url = url + escape("assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC");
-				
-				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-				params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
-				
-				 gadgets.io.makeRequest(url, function (response)){
-					showResults(response.data);
-				 }
-			
-			
-			}
+//			function fetchData(){
+//				showSection('main');
+//				
+//				var params = {};
+//				url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
+//				url = url + escape("assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC");
+//				
+//				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+//				params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
+//				
+//				 gadgets.io.makeRequest(url, function (response)){
+//					showResults(response.data);
+//				 }
+//			
+//			
+//			}
 			
 			showSection('main');
 			//gadgets.util.registerOnLoadHandler(showSection('main'));
