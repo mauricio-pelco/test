@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Standalone Gadget 2.1"
+  <ModulePrefs title="Standalone Gadget 2.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -50,8 +50,8 @@
 			
 			}
 			
-			showSection('main');
-			gadgets.util.registerOnLoadHandler(fetchData);
+			//showSection('main');
+			gadgets.util.registerOnLoadHandler(showSection('main'));
 		</script>
 		
 		
