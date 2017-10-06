@@ -34,8 +34,8 @@
 				
 			}
 			
-//			function fetchData(){
-//				showSection('main');
+			function fetchData(){
+				showSection('main');
 //				
 //				var params = {};
 //				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
@@ -49,10 +49,10 @@
 //				 }
 //			
 //			
-//			}
+			}
 			
 			//showSection('main');
-			gadgets.util.registerOnLoadHandler(showSection('main'));
+			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
 		
 		
