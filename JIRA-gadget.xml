@@ -43,7 +43,7 @@
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
 				
-				 gadgets.io.makeRequest(url, function (response){
+				 gadgets.io.makeRequest(url, function (response)){
 					showResults(response.data);
 				 }
 			
