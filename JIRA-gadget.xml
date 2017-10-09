@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Standalone Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.1"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -16,21 +16,10 @@
 		</div>
 		
 		<body>
-			<h1 id="result">JavaScript Example</h1>
-//			<input type="text" id="userInput" autofocus value = "Enter some text here ..." />
-			<input type="submit" value="Submit" onclick="fetchData()" />
+			<input type="submit" value="Generate DDI" onclick="fetchData()" />
 		</body>
 	
 		<script type="text/javascript">
-		
-//			function displayOutput() {
-//				var input = document.getElementById("userInput").value;
-//				if (input.length === 0) {
-//					alert("Please enter a valid input");
-//					return;
-//				}
-//				document.getElementById("result").innerHTML = "You have entered " + input;
-//			}
 		
 			function showSection(section){
 				var el = document.getElementById(section);
