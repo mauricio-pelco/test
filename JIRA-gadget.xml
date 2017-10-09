@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -53,9 +53,9 @@
 			    document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode);
 
-//				gadgets.io.makeRequest(url, function (response){
+				gadgets.io.makeRequest(url, function (response){
 //					showResults(response.data);
-//				 }
+				 }
 //			
 //			
 			}
