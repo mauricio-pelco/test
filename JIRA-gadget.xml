@@ -47,7 +47,7 @@
 				var hereNode = document.createTextNode("here");
 			    document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode);
-				var call = gadgets.Tab.getCallback();
+				//var call = gadgets.Tab.getCallback();
 				document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode);
 //				gadgets.io.makeRequest(url, call){
