@@ -47,7 +47,7 @@
 				var hereNode = document.createTextNode("here");
 			    document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode);
-				gadgets.Tab.getCallback();
+				gadgets.TabSet.addTab("new");
 				var hereNode2 = document.createTextNode("here2");
 				document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode2);
