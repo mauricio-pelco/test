@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Standalone Gadget 2.3"
+  <ModulePrefs title="Standalone Gadget 2.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -45,6 +45,9 @@
 				params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
 				
 				var call = gadgets.Tab.getCallback();
+				var callBackNode = document.createTextNode(call);
+				document.getElementById("main").appendChild(document.createElement("br"))
+				document.getElementById("main").appendChild(callBackNode);
 //				 gadgets.io.makeRequest(url, function(response)){
 //					showResults(response.data);
 //				 }
