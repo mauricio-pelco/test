@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Standalone Gadget 2.3"
+  <ModulePrefs title="Standalone Gadget 2.1"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -10,10 +10,6 @@
   </ModulePrefs>
   <Content type="html">
     <![CDATA[
-	
-		;<code style="color:green">String addTab(tabName, opt_params)</code>
-	
-		<span style="font-size:150%"><strong>gadgets.TabSet</strong></span>
 		
 		<div id="main" style="display: none">
 			hello world!
@@ -51,7 +47,7 @@
 				var hereNode = document.createTextNode("here");
 			    document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode);
-				gadgets.TabSet.addTab("new");
+				
 				var hereNode2 = document.createTextNode("here2");
 				document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode2);
@@ -63,6 +59,7 @@
 			}
 			
 			//showSection('main');
+			gadgets.TabSet.addTab("new");
 			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
 		
