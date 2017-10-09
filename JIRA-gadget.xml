@@ -11,6 +11,8 @@
   <Content type="html">
     <![CDATA[
 	
+		<span style="font-size:150%"><strong>gadgets.TabSet</strong></span>
+		
 		<div id="main" style="display: none">
 			hello world!
 		</div>
