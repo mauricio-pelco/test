@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.1"
+  <ModulePrefs title="DDI Gadget 2.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -26,18 +26,6 @@
 				el.style.display = "block";
 			}
 			
-			function showResults(result) {
-				showSection('main');
-				
-				var nameNode = document.createTextNode(result.description);
-				var sampleNode = document.createTextNode("here");
-				document.getElementById("main").appendChild(document.createElement("br"))
-				document.getElementById("main").appendChild(sampleNode);
-				document.getElementById("main").appendChild(document.createElement("br"))
-				document.getElementById("main").appendChild(nameNode);
-				
-			}
-			
 			function fetchData(){
 				showSection('main');
 				
@@ -54,6 +42,10 @@
 //				window.location = url;
 
 				gadgets.io.makeRequest(url, response, params);
+				
+				var hereNode2 = document.createTextNode("here2");
+			    document.getElementById("main").appendChild(document.createElement("br"))
+				document.getElementById("main").appendChild(hereNode);
 			}
 			
 			function response(obj) { 
