@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Standalone Gadget 2.6"
+  <ModulePrefs title="Standalone Gadget 2.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -48,7 +48,7 @@
 			    document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode);
 				
-				var hereNode2 = document.createTextNode("here2");
+				var hereNode2 = document.createTextNode(gadgets.Tab.getName());
 				document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode2);
 //				gadgets.io.makeRequest(url, call){
@@ -58,8 +58,6 @@
 //			
 			}
 			
-			//showSection('main');
-			gadgets.TabSet.addTab(new);
 			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
 		
