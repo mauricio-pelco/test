@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Standalone Gadget 2.4"
+  <ModulePrefs title="Standalone Gadget 2.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -14,6 +14,12 @@
 		<div id="main" style="display: none">
 			hello world!
 		</div>
+		
+		<body>
+			<h1 id="result">JavaScript Example</h1>
+			<input type="text" id="userInput" autofocus value = "Enter some text here ..." />
+			<input type="submit" value="Submit" onclick="displayOutput()" />
+		</body>
 	
 		<script type="text/javascript">
 		
