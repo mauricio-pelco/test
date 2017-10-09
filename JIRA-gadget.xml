@@ -46,17 +46,14 @@
 				url = url + escape("assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC");
 				
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+				params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.NONE;
 				params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
 				
 				var hereNode = document.createTextNode("here");
 			    document.getElementById("main").appendChild(document.createElement("br"))
 				document.getElementById("main").appendChild(hereNode);
-				
-				var tabName = gadgets.Tab.getName();
-				var hereNode2 = document.createTextNode(tabName);
-				document.getElementById("main").appendChild(document.createElement("br"))
-				document.getElementById("main").appendChild(hereNode2);
-//				gadgets.io.makeRequest(url, call){
+
+//				gadgets.io.makeRequest(url, function (response){
 //					showResults(response.data);
 //				 }
 //			
