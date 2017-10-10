@@ -37,7 +37,6 @@
 				var bodyNode = document.createElement("div");
 				bodyNode.innerHTML = obj.data.table;
 				document.getElementById("main").appendChild(bodyNode);
-				alert(obj.data);
 				
 			};
 			
