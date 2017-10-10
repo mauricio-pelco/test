@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.6"
+  <ModulePrefs title="DDI Gadget 2.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -33,8 +33,7 @@
 				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
 				url = url + escape("assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC");
 				
-				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-				params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
+				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.DOM;
 				
 				gadgets.io.makeRequest(url, response, params);
 				
