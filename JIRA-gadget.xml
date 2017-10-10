@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.5"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -11,13 +11,9 @@
   <Content type="html">
     <![CDATA[
 		
-		<div id="main" style="display: none">
-			hello world!
+		<div id="main" style="display: block">
+			DDI NUMBER:
 		</div>
-		
-		<body>
-			<input type="submit" value="Generate DDI" onclick="fetchData()" />
-		</body>
 	
 		<script type="text/javascript">
 		
@@ -27,8 +23,6 @@
 			}
 			
 			function fetchData(){
-				showSection('main');
-				
 				var params = {};
 				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
 				url = url + escape("assignee = currentUser() AND resolution = unresolved ORDER BY priority DESC");
@@ -47,7 +41,7 @@
 				
 			};
 			
-//			gadgets.util.registerOnLoadHandler(fetchData);
+			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
 		
 		
