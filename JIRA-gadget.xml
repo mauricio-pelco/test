@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.2"
+  <ModulePrefs title="DDI Gadget 2.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -11,10 +11,20 @@
   <Content type="html">
     <![CDATA[
 		
-		<div id="quickfind-container">
-			<label class="overlabel-apply show" for="quickfind" id="quickfind-label" style="display: block;">Quick Find</label>
-			<input class="text" id="quickfind" autocomplete="off">
-			<span class="inline-error"></span>
+		<div class="field-group">
+			<label for="filterId">Saved Filter:</label>                    
+			<div id="proj_filter_picker_filterId" class="builder-container">
+				<input id="filter_filterId_id" type="hidden" name="filterId" value="filter-10000">
+				<span id="filter_filterId_name" class="filterpicker-value-name field-value">sample</span>
+				<div id="quickfind-container">
+					<label class="overlabel-apply show" for="quickfind" id="quickfind-label" style="display: block;">Quick Find</label>
+					<input class="text" id="quickfind" autocomplete="off">
+					<span class="inline-error"></span>
+				</div>
+				<a href="#" class="advanced-search" id="filter_filterId_advance" title="Click here to select/change filter or project." target="_parent">Advanced Search</a>
+			</div>                
+			<div id="filterId-error" class="error">
+			</div>
 		</div>
 		
 		<div class="column-picker-select-wrapper">
