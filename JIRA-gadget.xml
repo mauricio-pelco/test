@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -10,79 +10,26 @@
   </ModulePrefs>
   <Content type="html">
     <![CDATA[
-		
-		<div class="field-group">
-			<label for="filterId">Saved Filter:</label>                    
-			<div id="proj_filter_picker_filterId" class="builder-container">
-				<input id="filter_filterId_id" type="hidden" name="filterId" value="filter-10000">
-				<span id="filter_filterId_name" class="filterpicker-value-name field-value">sample</span>
-				<div id="quickfind-container">
-					<label class="overlabel-apply show" for="quickfind" id="quickfind-label" style="display: block;">Quick Find</label>
-					<input class="text" id="quickfind" autocomplete="off">
-					<span class="inline-error"></span>
-				</div>
-				<a href="#" class="advanced-search" id="filter_filterId_advance" title="Click here to select/change filter or project." target="_parent">Advanced Search</a>
-			</div>                
-			<div id="filterId-error" class="error">
-			</div>
-		</div>
-		
+			
 		<div class="column-picker-select-wrapper">
 			<select id="column-picker-select" class="select">
 				<option value="">Select a field...</option>
-				<option value="versions">Affects Version/s</option>
-				<option value="assignee">Assignee</option>
-				<option value="customfield_10003">Business Value</option>
-				<option value="components">Component/s</option>
-				<option value="created">Created</option>
-				<option value="creator">Creator</option>
-				<option value="description">Description</option>
-				<option value="duedate">Due Date</option>
-				<option value="environment">Environment</option>
-				<option value="customfield_10009">Epic Color</option>
-				<option value="customfield_10006">Epic Link</option>
-				<option value="customfield_10007">Epic Name</option>
-				<option value="customfield_10008">Epic Status</option>
-				<option value="customfield_10001">Epic/Theme</option>
-				<option value="fixVersions">Fix Version/s</option>
-				<option value="customfield_10000">Flagged</option>
-				<option value="thumbnail">Images</option>
-				<option value="labels">Labels</option>
-				<option value="lastViewed">Last Viewed</option>
-				<option value="issuelinks">Linked Issues</option>
-				<option value="timeoriginalestimate">Original Estimate</option>
-				<option value="progress">Progress</option>
-				<option value="project">Project</option>
-				<option value="customfield_10004">Rank</option>
-				<option value="timeestimate">Remaining Estimate</option>
-				<option value="reporter">Reporter</option>
-				<option value="resolution">Resolution</option>
-				<option value="resolutiondate">Resolved</option>
-				<option value="customfield_10100">Risk Priority Number</option>
-				<option value="security">Security Level</option>
-				<option value="customfield_10005">Sprint</option>
-				<option value="status">Status</option>
-				<option value="customfield_10002">Story Points</option>
-				<option value="subtasks">Sub-Tasks</option>
-				<option value="timespent">Time Spent</option>
-				<option value="updated">Updated</option>
-				<option value="votes">Votes</option>
-				<option value="watches">Watchers</option>
-				<option value="workratio">Work Ratio</option>
-				<option value="aggregatetimeoriginalestimate">Σ Original Estimate</option>
-				<option value="aggregateprogress">Σ Progress</option>
-				<option value="aggregatetimeestimate">Σ Remaining Estimate</option>
-				<option value="aggregatetimespent">Σ Time Spent</option>
+
 			</select>
 			<input id="column-picker-add" type="button" value="Add" class="button">
 		</div>
 		
 		<script type="text/javascript">
-			var contextPath = "http://localhost:8080";
 		
 			function showSection(section){
 				var el = document.getElementById(section);
 				el.style.display = "block";
+			}
+			
+			function hideSection(section){
+				var el - document.getElementById(section);
+				el.style.display = "none";
+			
 			}
 			
 			function fetchData(){
