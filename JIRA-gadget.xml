@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.4"
+  <ModulePrefs title="DDI Gadget 2.5"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -45,9 +45,10 @@
 				
 				gadgets.io.makeRequest(url, response, params);
 				
-			}
+			};
 			
 			function response(obj) { 
+			
 				var bodyNode = document.createElement("div");
 				bodyNode.innerHTML = obj.data.table;
 				document.getElementById("main").appendChild(bodyNode);
