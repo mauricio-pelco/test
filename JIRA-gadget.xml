@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.5"
+  <ModulePrefs title="DDI Gadget 2.6"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -10,6 +10,9 @@
   </ModulePrefs>
   <Content type="html">
     <![CDATA[
+	
+		<div id="main" style="display: block">
+		</div>
 			
 		<div class="column-picker-select-wrapper">
 			<select id="column-picker-select" class="select">
@@ -44,9 +47,11 @@
 			}
 			
 			function response(obj) { 
-			   	return AJS.$.extend(getConfiguredInterface(), {
-					showConfig: function(){}
-				});
+				var show = gadgets.json.stringify(obj);
+				
+				var nameNode = document.createTextNode(show);
+					document.getElementById("main").appendChild(nameNode);
+					document.getElementById("main").appendChild(document.createElement("br"));
 			};
 			
 			
