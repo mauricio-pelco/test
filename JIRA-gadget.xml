@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.4"
+  <ModulePrefs title="DDI Gadget 2.5"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -55,7 +55,7 @@
 			
 			function response(obj) { 
 				var bodyNode = document.createElement("div");
-				bodyNode.innerHTML = obj.data.summary;
+				bodyNode.innerHTML = obj.data.customfield_10100;
 				document.getElementById("main").appendChild(bodyNode);
 				alert(JSON.stringify(obj));
 			};
