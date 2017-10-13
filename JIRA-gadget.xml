@@ -14,7 +14,7 @@
 		<div class="column-picker-select-wrapper">
 			<select id="column-picker-select" class="select">
 				<option value="">Select a field...</option>
-
+				<option value="">Option 1</option>
 			</select>
 			<input id="column-picker-add" type="button" value="Add" class="button">
 		</div>
