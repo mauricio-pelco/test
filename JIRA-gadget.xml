@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -12,9 +12,17 @@
     <![CDATA[
 	
 		<div id="main" style="display: block">
+			hello
 		</div>
 			
-
+		<div class="column-picker-select-wrapper">
+			<select id="column-picker-select" class="select">
+				<option value="">Select a field...</option>
+				<option value="">Option 1</option>
+			</select>
+			<input id="column-picker-add" type="button" value="Add" class="button">
+		</div>
+		
 		<script type="text/javascript">
 		
 			function showSection(section){
