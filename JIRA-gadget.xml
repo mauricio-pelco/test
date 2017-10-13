@@ -40,8 +40,8 @@
 				showSection('main');
 				
 				var params = {};
-				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
-				url = url + escape("issuetype=Bug");
+				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=issuetype=Bug";
+				//url = url + escape("issuetype=Bug");
 				
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				
