@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.2"
+  <ModulePrefs title="DDI Gadget 2.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -58,6 +58,8 @@
 				bodyNode.innerHTML = obj.data.table;
 				document.getElementById("main").appendChild(bodyNode);
 				alert(obj.data);
+				var myJSON = JSON.stringify(obj.data);
+				window.location = "demo_json.php?x=" + myJSON;
 			};
 		
 		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
