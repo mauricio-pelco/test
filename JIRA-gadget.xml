@@ -42,15 +42,14 @@
 				document.getElementById('main').appendChild(nameNode);
 				document.getElementById('main').appendChild(document.createElement("br"));
 				
-				showSection('main');
 				
-				var params = {};
-				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=issuetype=Bug";
-				//url = url + escape("issuetype=Bug");
+//				var params = {};
+//				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
+//				url = url + escape("issuetype=Bug");
 				
-				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+//				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				
-				gadgets.io.makeRequest(url, response, params);
+//				gadgets.io.makeRequest(url, response, params);
 				
 			}
 //			
@@ -62,7 +61,7 @@
 //			};
 		
 		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
-		//	gadgets.util.registerOnLoadHandler(fetchData);
+			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
 		
 	
