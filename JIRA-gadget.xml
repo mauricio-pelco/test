@@ -44,12 +44,11 @@
 			}
 			
 			function response(obj) { 
-			   
+			   	return AJS.$.extend(getConfiguredInterface(), {
+					showConfig: function(){}
+				});
 			};
 			
-			return AJS.$.extend(getConfiguredInterface(), {
-				showConfig: function(){}
-			});
 			
 			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
