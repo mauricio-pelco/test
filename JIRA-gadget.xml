@@ -50,6 +50,10 @@
 			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
 		
+		return AJS.$.extend(getConfiguredInterface(), {
+			showConfig: function(){}
+		});
+		
 		
     ]]>
   </Content>
