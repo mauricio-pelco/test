@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.6"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -33,10 +33,14 @@
 			function hideSection(section){
 				var el - document.getElementById(section);
 				el.style.display = "none";
-			
 			}
 			
 			function fetchData(){
+			
+				var nameNode = document.createTextNode("here");
+				document.getElementById("main").appendChild(nameNode);
+				document.getElementById("main").appendChild(document.createElement("br"));
+				
 				showSection('main');
 				
 				var params = {};
@@ -60,8 +64,7 @@
 			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
 		
-
-		
+	
 		
     ]]>
   </Content>
