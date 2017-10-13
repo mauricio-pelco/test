@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -44,8 +44,8 @@
 				
 				
 				var params = {};
-				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
-				url = url + escape("issuetype=Bug");
+				var url = "http://localhost:8080/rest/api/2/search?jql=issueType=Bug";
+//				url = url + escape("issuetype=Bug");
 				
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				
