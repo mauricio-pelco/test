@@ -47,11 +47,9 @@
 			}
 			
 			function response(obj) { 
-				var show = gadgets.json.stringify(obj);
-				
-				var nameNode = document.createTextNode(show);
-					document.getElementById("main").appendChild(nameNode);
-					document.getElementById("main").appendChild(document.createElement("br"));
+				var bodyNode = document.createElement("div");
+				bodyNode.innerHTML = obj.data.table;
+				document.getElementById("main").appendChild(bodyNode);
 			};
 			
 			
