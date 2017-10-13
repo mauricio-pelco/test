@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.5"
+  <ModulePrefs title="DDI Gadget 2.6"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -37,6 +37,8 @@
 			}
 			
 			function fetchData(){
+				showSection('main');
+				
 				var params = {};
 				var url = "http://localhost:8080/rest/gadget/1.0/issueTable/jql?jql=";
 				url = url + escape("issuetype=Bug");
@@ -45,13 +47,13 @@
 				
 				gadgets.io.makeRequest(url, response, params);
 				
-			};
+			}
 			
 			function response(obj) { 
-			
 				var bodyNode = document.createElement("div");
 				bodyNode.innerHTML = obj.data.table;
 				document.getElementById("main").appendChild(bodyNode);
+				alert(obj.data);
 			};
 			
 			
