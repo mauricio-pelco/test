@@ -11,7 +11,7 @@
   <Content type="html">
     <![CDATA[
 	
-		<div id="main" style="display: block, font-weight: bold">
+		<div id="main" style="display: block">
 			hello
 		</div>
 			
@@ -28,6 +28,7 @@
 			function showSection(section){
 				var el = document.getElementById(section);
 				el.style.display = "block";
+				el.style.font-weight= "bold";
 			}
 			
 
@@ -93,8 +94,9 @@
 				}
 				// html += R1 + "<br />" + R2 + "<br />" + R3;
 				var DDI = calculateDDI(R1, R2, R3);
-				html += "<br />" + DDI;
+				html += DDI;
 				document.getElementById('main').innerHTML = html;
+				showSection('main');
 			};
 		
 		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
