@@ -55,7 +55,7 @@
 			
 			function response(obj) { 
 				var bodyNode = document.createElement("div");
-				var myArr = JSON.parse(this.responseText);
+				var myArr = JSON.parse(obj);
 				bodyNode.innerHTML = myArr[1];
 				document.getElementById("main").appendChild(bodyNode);
 				alert(JSON.stringify(obj));
