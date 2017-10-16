@@ -66,7 +66,7 @@
 						html += "<br /><ul>";
 						for (var i = 0; i < value.length ; i++)
 						{
-						html += "<li>"+ JSON.stringify(jsondata.issues[i].id) + "</li>";
+						html += "<li>"+ JSON.stringify(jsondata.issues[i].customfield_10100) + "</li>";
 						}
 					html+= "</ul>";
 					}  
@@ -86,6 +86,9 @@
 		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
 			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
+		
+
+
 		
 	
 		
