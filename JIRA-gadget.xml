@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -56,6 +56,7 @@
 			function response(obj) { 
 				var jsondata = obj.data;
 				var html = "";
+				var DDI = 0;
 				// Process returned JS object as an associative array
 				for (var key in jsondata) {
 					var value = jsondata[key];
@@ -66,6 +67,7 @@
 					//	html += "<br /><ul>";
 						for (var i = 0; i < value.length ; i++)
 						{
+						DDI += jsondata.issues[i].fields.customfield_10100;
 						html += "<li>"+ JSON.stringify(jsondata.issues[i].fields.customfield_10100) + "</li>";
 						}
 					html+= "</ul>";
@@ -73,7 +75,8 @@
 					// If 'value' isn't an array, just write it out as a string
 					else {        
 					//html += value + "<br />";
-					}      
+					}
+					html += "<br />" + DDI + "<br />";
 				}               
 				document.getElementById('main').innerHTML = html;
 			};
@@ -82,29 +85,6 @@
 			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
 		
-		
-		<style>
-    		#issuetable {margin:0 0 0.25em;width:100%;}
-			#issuetable .issuetype {width:1%;}
-    		td.colHeaderLink {
-				font-family:Arial,Helvetica,sans-serif;
-				font-size:12px;
-				white-space:nowrap;
-			}
-			.grid, .bordered {
-				background-color:#FCFCFC;
-				border:1px solid #D2D2D2;
-				border-collapse:collapse;
-				margin-bottom:0.5em;
-				margin-top:0.5em;
-			}
-			.grid th, .grid td {
-				border:1px solid #D2D2D2;
-				padding:4px;
-				vertical-align:top;
-			}
-
-    	</style>
 		
 
 
