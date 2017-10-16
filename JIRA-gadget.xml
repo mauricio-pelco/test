@@ -66,7 +66,7 @@
 						html += "<br /><ul>";
 						for (var i = 0; i < value.length ; i++)
 						{
-						html += "<li>"+ jsondata.Hobbies[i] + "</li>";
+						html += "<li>"+ jsondata.expand[i] + "</li>";
 						}
 					html+= "</ul>";
 					}  
