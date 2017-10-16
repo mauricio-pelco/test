@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.4"
+  <ModulePrefs title="DDI Gadget 2.5"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -63,7 +63,7 @@
 					// If 'value' is an array, render its contents as a bulleted list
 					if (value instanceof Array)
 					{
-						html += "<br /><ul>";
+					//	html += "<br /><ul>";
 						for (var i = 0; i < value.length ; i++)
 						{
 						html += "<li>"+ JSON.stringify(jsondata.issues[i].fields.customfield_10100) + "</li>";
