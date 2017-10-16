@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.4"
+  <ModulePrefs title="DDI Gadget 2.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -11,7 +11,7 @@
   <Content type="html">
     <![CDATA[
 	
-		<div id="main" style="display: block">
+		<div id="main" style="display: block, font-weight: bold">
 			hello
 		</div>
 			
@@ -82,7 +82,7 @@
 							if(RPN >= 18 && RPN <= 25){
 								R1++;
 							}
-						html += "<li>"+ JSON.stringify(jsondata.issues[i].fields.customfield_10100) + "</li>";
+					//	html += "<li>"+ JSON.stringify(jsondata.issues[i].fields.customfield_10100) + "</li>";
 						}
 					html+= "</ul>";
 					}  
@@ -91,7 +91,7 @@
 					
 					}
 				}
-				html += R1 + "<br />" + R2 + "<br />" + R3;
+				// html += R1 + "<br />" + R2 + "<br />" + R3;
 				var DDI = calculateDDI(R1, R2, R3);
 				html += "<br />" + DDI;
 				document.getElementById('main').innerHTML = html;
