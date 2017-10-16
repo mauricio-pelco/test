@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -53,6 +53,11 @@
 				
 			}
 			
+			function calculateDDI(R1, R2, R3){
+				var DDI = 8*R1 + 4*R2 + R3;
+				return(DDI);
+			}
+			
 			function response(obj) { 
 				var jsondata = obj.data;
 				var html = "";
@@ -86,7 +91,9 @@
 					
 					}
 				}
-				html += R3 + "<br />" + R2 + "<br />" + R3;
+				html += R1 + "<br />" + R2 + "<br />" + R3;
+				var DDI = calculateDDI(R1, R2, R3);
+				html += "<br />" + DDI;
 				document.getElementById('main').innerHTML = html;
 			};
 		
