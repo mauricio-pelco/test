@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.5"
+  <ModulePrefs title="DDI Gadget 2.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -12,7 +12,6 @@
     <![CDATA[
 	
 		<div id="main" style="display: block">
-			hello
 		</div>
 			
 		<div class="column-picker-select-wrapper">
@@ -37,12 +36,6 @@
 			}
 			
 			function fetchData(){
-			
-				var nameNode = document.createTextNode("here");
-				document.getElementById('main').appendChild(nameNode);
-				document.getElementById('main').appendChild(document.createElement("br"));
-				
-				
 				var params = {};
 				var url = "http://localhost:8080/rest/api/2/search?jql=issueType=Bug";
 //				url = url + escape("issuetype=Bug");
@@ -50,16 +43,16 @@
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				
 				gadgets.io.makeRequest(url, response, params);
-				
 			}
 			
 			function response(obj) { 
 				var jsondata = obj.data;
 				var html = "";
+				var 
 				// Process returned JS object as an associative array
 				for (var key in jsondata) {
 					var value = jsondata[key];
-					html += key + ": ";
+			//		html += key + ": ";
 					// If 'value' is an array, render its contents as a bulleted list
 					if (value instanceof Array)
 					{
@@ -72,7 +65,7 @@
 					}  
 					// If 'value' isn't an array, just write it out as a string
 					else {        
-					html += value + "<br />";
+			//		html += value + "<br />";
 					}      
 				}               
 				document.getElementById('main').innerHTML = html;
