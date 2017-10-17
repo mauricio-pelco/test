@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.5"
+  <ModulePrefs title="DDI Gadget 2.6"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -36,12 +36,7 @@
 			}
 			
 			function fetchData(){
-			
-			//	var nameNode = document.createTextNode("here");
-			//	document.getElementById('main').appendChild(nameNode);
-			//	document.getElementById('main').appendChild(document.createElement("br"));
-				
-				
+					
 				var params = {};
 				var url = "http://localhost:8080/rest/api/2/search?jql=issueType=Bug";
 //				url = url + escape("issuetype=Bug");
@@ -93,7 +88,7 @@
 				html += R1 + "<br />" + R2 + "<br />" + R3;
 				var DDI = calculateDDI(R1, R2, R3);
 				html += DDI;
-				document.getElementById("main").appendChild(document.createElement("br"));
+				//document.getElementById("main").appendChild(document.createElement("br"));
 				var nameNode = document.createTextNode(DDI);
 				document.getElementById("main").appendChild(nameNode);
 				//document.getElementById('main').innerHTML = html;
