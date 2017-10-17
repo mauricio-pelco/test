@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.5"
+  <ModulePrefs title="DDI Gadget 2.1"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -23,13 +23,25 @@
 			<input id="column-picker-add" type="button" value="Add" class="button">
 		</div>
 		
+		<style type="text/css"> 
+			.centered {  
+			position:fixed;
+			z-index: 100;  
+			top:50%;  
+			left:50%;  
+			margin:-100px 0 0 -100px;  
+			width:200px;  
+			height:200px;  
+		}  
+		</style>	
+		
 		<script type="text/javascript">
 		
 			function showSection(section){
 				var el = document.getElementById(section);
 				el.style.display = "block";
 				el.style.fontWeight = "bold";
-				el.style.textAlign = "center";
+				el.style.textAlign = "centered";
 			}
 			
 			function hideSection(section){
@@ -101,6 +113,8 @@
 		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
 			gadgets.util.registerOnLoadHandler(fetchData);
 		</script>
+		
+		
 		
 		
 		
