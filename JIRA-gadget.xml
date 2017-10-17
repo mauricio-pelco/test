@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.1"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -29,9 +29,9 @@
 			z-index: 100;  
 			top:50%;  
 			left:50%;  
-			margin:-100px 0 0 -100px;  
+			margin:-50px 0 0 -100px;  
 			width:200px;  
-			height:200px;  
+			height:100px;  
 		}  
 		</style>	
 		
