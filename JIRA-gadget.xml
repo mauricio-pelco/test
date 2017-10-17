@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -29,6 +29,7 @@
 				var el = document.getElementById(section);
 				el.style.display = "block";
 				el.style.fontWeight = "bold";
+				el.style.textAlign = "center";
 			}
 			
 			function hideSection(section){
