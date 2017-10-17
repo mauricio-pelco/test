@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 1.7"
+  <ModulePrefs title="DDI Generator 1.8"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -103,13 +103,10 @@
 				showSection('main');
 				hideSection('drop-down');
 				gadgets.window.adjustHeight();
-				gadgets.window.adjustHeight();
-				gadgets.window.adjustHeight();
 			};
 		
 		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
 			gadgets.util.registerOnLoadHandler(fetchData);
-			gadgets.window.adjustHeight();
 		</script>
 		
 		
