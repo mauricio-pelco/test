@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.1"
+  <ModulePrefs title="DDI Gadget 2.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
+	<Require feature="dynamic-height"/>
     <Optional feature="gadget-directory">
       <Param name="categories">JIRA</Param>
     </Optional>
@@ -111,6 +112,7 @@
 		
 		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
 			gadgets.util.registerOnLoadHandler(fetchData);
+			gadgets.window.adjustHeight();
 		</script>
 		
 		
