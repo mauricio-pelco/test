@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.5"
+  <ModulePrefs title="DDI Gadget 2.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
+	<Require feature="dynamic-height"/>
     <Optional feature="gadget-directory">
       <Param name="categories">JIRA</Param>
     </Optional>
@@ -29,8 +30,8 @@
 			z-index: 100;  
 			top:50%;  
 			left:50%;  
-			margin:-50px 0 0 -100px;  
-			width:400px;  
+			margin:-50px 0 0 -50px;  
+			width:200px;  
 			height:100px; 
 			font-size:60px;
 		}  
@@ -68,7 +69,6 @@
 			
 			function response(obj) { 
 				var jsondata = obj.data;
-				var html = "";
 				var R1 = 0;
 				var R2 = 0;
 				var R3 = 0;
@@ -90,25 +90,19 @@
 							if(RPN >= 18 && RPN <= 25){
 								R1++;
 							}
-					html += "<li>"+ JSON.stringify(jsondata.issues[i].fields.customfield_10100) + "</li>";
 						}
-					html+= "</ul>";
 					}  
 					// If 'value' isn't an array, just write it out as a string
 					else {        
 					
 					}
 				}
-				html += R1 + "<br />" + R2 + "<br />" + R3;
 				var DDI = calculateDDI(R1, R2, R3);
-				html += DDI;
-				//document.getElementById("main").appendChild(document.createElement("br"));
 				var nameNode = document.createTextNode(DDI);
 				document.getElementById("main").appendChild(nameNode);
-				//document.getElementById('main').innerHTML = html;
 				showSection('main');
 				hideSection('drop-down');
-
+				gadgets.window.adjustHeight();
 			};
 		
 		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
