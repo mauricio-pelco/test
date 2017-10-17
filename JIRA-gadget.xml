@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.3"
+  <ModulePrefs title="DDI Gadget 2.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -93,10 +93,10 @@
 				html += R1 + "<br />" + R2 + "<br />" + R3;
 				var DDI = calculateDDI(R1, R2, R3);
 				html += DDI;
-				//document.getElementById("main").appendChild(document.createElement("br"));
-				//var nameNode = document.createTextNode(DDI);
-				//document.getElementById("main").appendChild(nameNode);
-				document.getElementById('main').innerHTML = html;
+				document.getElementById("main").appendChild(document.createElement("br"));
+				var nameNode = document.createTextNode(DDI);
+				document.getElementById("main").appendChild(nameNode);
+				//document.getElementById('main').innerHTML = html;
 				//showSection('main');
 			};
 		
