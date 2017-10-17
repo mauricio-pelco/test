@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Gadget 2.4"
+  <ModulePrefs title="DDI Gadget 2.5"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -37,9 +37,9 @@
 			
 			function fetchData(){
 			
-				var nameNode = document.createTextNode("here");
-				document.getElementById('main').appendChild(nameNode);
-				document.getElementById('main').appendChild(document.createElement("br"));
+			//	var nameNode = document.createTextNode("here");
+			//	document.getElementById('main').appendChild(nameNode);
+			//	document.getElementById('main').appendChild(document.createElement("br"));
 				
 				
 				var params = {};
