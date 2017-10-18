@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 2.2"
+  <ModulePrefs title="DDI Generator 2.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -16,29 +16,7 @@
 			
 		</div>
 			
-	//	<div id="drop-down" class="column-picker-select-wrapper">
-	//		<select id="column-picker-select" class="select">
-	//			<option value="">Select a field...</option>
-	//			<option value="">Option 1</option>
-	//		</select>
-	//		<input id="column-picker-add" type="button" value="Add" class="button">
-	//	</div>
-	
-		<div class="field-group">
-			<label for="filterId">Saved Filter:</label>                    
-			<div id="proj_filter_picker_filterId" class="builder-container">
-				<input id="filter_filterId_id" type="hidden" name="filterId" value="">
-				<span id="filter_filterId_name" class="filterpicker-value-name field-value">No Filter selected</span>
-				<div id="quickfind-container">
-					<label class="overlabel-apply show" for="quickfind" id="quickfind-label">Quick Find</label>
-					<input class="text" id="quickfind" autocomplete="off">
-					<span class="inline-error"></span>
-				</div>
-				<a href="#" class="advanced-search" id="filter_filterId_advance" title="Click here to select/change filter or project." target="_parent">Advanced Search</a>
-			</div>                
-			<div id="filterId-error" class="error">
-			</div>
-		</div>
+		<a href="#" class="advanced-search" id="filter_filterId_advance" title="Click here to select/change filter or project." target="_parent">Advanced Search</a>
 		
 		<style type="text/css"> 
 			.centered {  
