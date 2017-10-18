@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 2.3"
+  <ModulePrefs title="DDI Generator 2.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -16,7 +16,9 @@
 			
 		</div>
 			
-		<a href="#" class="advanced-search" id="filter_filterId_advance" title="Click here to select/change filter or project." target="_parent">Advanced Search</a>
+		<div class="popup" onclick="filterSelector()">Click me!
+			<span class="popuptext" id="myPopup">Popup text...</span>
+		</div>
 		
 		<style type="text/css"> 
 			.centered {  
@@ -33,6 +35,12 @@
 		</style>	
 		
 		<script type="text/javascript">
+		
+			function filterSelector(){
+				var url =  "http://localhost:8080/secure/FilterPickerPopup.jspa?showProjects=false&field=filterId"
+				var newWindow = window.open(url, "Select", "width=800, height=500, resizable, scrollbars=yes");
+				newWindow.focus();
+			}
 		
 			function showSection(section){
 				var el = document.getElementById(section);
