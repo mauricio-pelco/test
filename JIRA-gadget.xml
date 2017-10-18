@@ -100,6 +100,7 @@
 				var DDI = calculateDDI(R1, R2, R3);
 				var nameNode = document.createTextNode(DDI);
 				document.getElementById("main").appendChild(nameNode);
+				document.getElementById("main").appendChild(document.createElement("br"));
 				showSection('main');
 				hideSection('drop-down');
 				gadgets.window.adjustHeight();
@@ -107,6 +108,7 @@
 		
 		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
 			gadgets.util.registerOnLoadHandler(fetchData);
+			gadgets.window.adjustHeight();
 		</script>
 		
 		
