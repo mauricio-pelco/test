@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 1.1"
+  <ModulePrefs title="DDI Generator 2.1"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -34,6 +34,7 @@
 			width:100px;  
 			height:200px; 
 			font-size:150px;
+			color:red;
 		}  
 		</style>	
 		
