@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 2.6"
+  <ModulePrefs title="DDI Generator 2.7"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -16,7 +16,7 @@
 			
 		</div>
 			
-		<a href="#" onclick="filterSelector()">Click me!</a>
+		<a href="#" onclick="filterSelector()" target="_parent">Click me!</a>
 		
 		<style type="text/css"> 
 			.centered {  
