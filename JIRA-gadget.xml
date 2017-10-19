@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 3.1"
+  <ModulePrefs title="DDI Generator 3.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -18,7 +18,7 @@
 			
 		<a href="#" onclick="filterSelector()">Click me!</a>
 		
-		<input id="filter_filterId_id" type="number" name="filterId" value>
+		<input id="filter_filterId_id" type="text" name="filterId" onChange="filterValue()" value>
 		
 		<style type="text/css"> 
 			.centered {  
@@ -35,6 +35,12 @@
 		</style>	
 		
 		<script type="text/javascript">
+		
+			function filterValue(){
+				var convert = document.getElementById('filter_filterId_id').value;
+				convert = parseInt(convert.replace(/[^0-9\.]/g, ''), 10);
+				document.getElementById('filter_filterId_id').value = coonvert;
+			}
 		
 			function filterSelector(){
 				var url =  "http://localhost:8080/secure/FilterPickerPopup.jspa?showProjects=false&field=filterId"
@@ -108,15 +114,10 @@
 			//	hideSection('drop-down');
 				gadgets.window.adjustHeight();
 			};
-		
-		//	gadgets.util.registerOnLoadHandler(hideSection('main'));
+			
 			gadgets.util.registerOnLoadHandler(fetchData);
 			gadgets.window.adjustHeight();
 		</script>
-		
-		
-		
-		
 		
     ]]>
   </Content>
