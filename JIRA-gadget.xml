@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 3.9"
+  <ModulePrefs title="DDI Generator 4.0"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -18,7 +18,7 @@
 			
 		<a href="#" onclick="filterSelector()">Click me!</a>
 		
-		<input id="filter_filterId_id" oninput="filterValue()" type="text" name="filterId" value="0">
+		<input id="filter_filterId_id" oninput="filterValue()" type="submit" name="filterId" value="0">
 		
 		<style type="text/css"> 
 			.centered {  
@@ -112,8 +112,7 @@
 					}
 				}
 				var DDI = calculateDDI(R1, R2, R3);
-				var convert = document.getElementById('filter_filterId_id').value;
-				var nameNode = document.createTextNode(convert);
+				var nameNode = document.createTextNode(DDI);
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
 				showSection('main');
