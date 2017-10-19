@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 4.1"
+  <ModulePrefs title="DDI Generator 4.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -37,14 +37,9 @@
 		<script type="text/javascript">
 		
 			function filterValue(){
-				//var convert = document.getElementById('filter_filterId_id').value;
-				//convert = parseInt(convert.replace(/[^0-9\.]/g, ''), 10);
-				var convert = "hello i am here";
+				var convert = document.getElementById('filter_filterId_id').value;
+				convert = parseInt(convert.replace(/[^0-9\.]/g, ''), 10);
 				window.alert(convert);
-				//var nameNode = document.createTextNode(convert);
-				//document.getElementById("main").appendChild(nameNode);
-				//document.getElementById("main").appendChild(document.createElement("br"));
-				gadgets.window.adjustHeight();
 			}
 		
 			function filterSelector(){
