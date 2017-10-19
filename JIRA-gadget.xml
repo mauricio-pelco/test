@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 2.8"
+  <ModulePrefs title="DDI Generator 2.9"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -18,9 +18,7 @@
 			
 		<a href="#" onclick="filterSelector()">Click me!</a>
 		
-		<form action="/action_page.php">
-		<input id="filter_filterId_id" type="hidden" name="filterId" value="filter-10000">
-		</form>
+		<input id="filter_filterId_id" type="hidden" name="filterId" value>
 		
 		<style type="text/css"> 
 			.centered {  
