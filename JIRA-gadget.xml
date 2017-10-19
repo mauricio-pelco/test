@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 2.5"
+  <ModulePrefs title="DDI Generator 2.6"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -38,6 +38,7 @@
 				var url =  "http://localhost:8080/secure/FilterPickerPopup.jspa?showProjects=false&field=filterId"
 				var newWindow = window.open(url, "Select", "width=800, height=500, resizable, scrollbars=yes");
 				newWindow.focus();
+				newWindow.opener.document;
 			}
 		
 			function showSection(section){
