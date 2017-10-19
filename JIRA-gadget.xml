@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 5.7"
+  <ModulePrefs title="DDI Generator 5.8"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -50,7 +50,7 @@
 			function filterValue(){
 				var id = document.getElementById('filter_filterId_id').value;
 				id = parseInt(id.replace(/[^0-9\.]/g, ''), 10);
-				getFilter(id);
+			//	getFilter(id);
 				window.alert(id);
 			}
 			
@@ -64,9 +64,9 @@
 				
 			}
 			
-			function response1(obj){
+			//function response1(obj){
 			
-				window.alert("here");
+				//window.alert("here");
 				//var jsondata = obj.data;
 				
 				//for (var key in jsondata) {
@@ -76,7 +76,7 @@
 				//	document.getElementById("main").appendChild(document.createElement("br"));
 				//}
 			
-			}
+			//}
 			
 		
 			function filterSelector(){
