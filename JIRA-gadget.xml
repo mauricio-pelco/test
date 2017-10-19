@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 4.3"
+  <ModulePrefs title="DDI Generator 4.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -15,15 +15,13 @@
 		<div id="main" class="centered" style="display: none">
 			
 		</div>
-			
-		<a href="#" onclick="filterSelector()">Click me!</a>
 		
 		<input id="filter_filterId_id" onclick="filterValue()" type="hidden" name="filterId" value="0">
 		
 		<div id="submission" class="centeredBlack" style="display: block">  
 			<a href="#" onclick="filterSelector()">Saved Filters</a>
 			<input id="update" onclick="filterValue()" type="button" value="UPDATE">
-		<input id=
+		</div>
 		
 		
 		<style type="text/css"> 
