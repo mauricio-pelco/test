@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 3.2"
+  <ModulePrefs title="DDI Generator 3.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -39,7 +39,9 @@
 			function filterValue(){
 				var convert = document.getElementById('filter_filterId_id').value;
 				convert = parseInt(convert.replace(/[^0-9\.]/g, ''), 10);
-				document.getElementById('filter_filterId_id').value = coonvert;
+				var nameNode = document.createTextNode(convert);
+				document.getElementById("main").appendChild(nameNode);
+				document.getElementById("main").appendChild(document.createElement("br"));
 			}
 		
 			function filterSelector(){
