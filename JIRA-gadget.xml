@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 3.8"
+  <ModulePrefs title="DDI Generator 3.9"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -112,7 +112,8 @@
 					}
 				}
 				var DDI = calculateDDI(R1, R2, R3);
-				var nameNode = document.createTextNode(DDI);
+				var convert = document.getElementById('filter_filterId_id').value;
+				var nameNode = document.createTextNode(convert);
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
 				showSection('main');
