@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 6.1"
+  <ModulePrefs title="DDI Generator 6.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -78,7 +78,7 @@
 				
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				
-				gadgets.io.makeRequest(url, response, params);
+				gadgets.io.makeRequest(url, showNumber, params);
 				
 			}
 			
@@ -87,7 +87,7 @@
 				return(DDI);
 			}
 			
-			function response(obj) { 
+			function showNumber(obj) { 
 				var jsondata = obj.data;
 				var R1 = 0;
 				var R2 = 0;
