@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 7.1"
+  <ModulePrefs title="DDI Generator 7.2"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -78,13 +78,15 @@
 				url = url + escape(filterId);
 				
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-			
+				
+				window.alert("here");
+				
 				gadgets.io.makeRequest(url, extractQuery, params);
 			}
 			
-			function extractQuery(passed){
+			function extractQuery(obj){
 				window.alert("here!");
-				var jsondata = passed.data;
+				var jsondata = obj.data;
 				
 			}
 			
