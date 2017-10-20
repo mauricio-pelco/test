@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 6.8"
+  <ModulePrefs title="DDI Generator 6.9"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -75,9 +75,15 @@
 			
 			function findFilter(filterId){
 				var url = "http://localhost:8080/rest/api/2/filter/" + filterId;
+				
+				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 			
-				window.alert(url);
+				gadgets.io.makeRequest(url, extractQuery, params);
+			}
 			
+			function extractQuery(obj){
+				var jsondata = obj.data;
+				window.alert(jsondata);
 			}
 			
 			function fetchData(){
