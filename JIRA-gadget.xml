@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 6.5"
+  <ModulePrefs title="DDI Generator 6.6"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -16,7 +16,7 @@
 			<div id="search" style="display: block">  
 				<a href="#" onclick="filterSelector()">Saved Filters</a>
 			</div>
-			<div id="updateButton" style="display: hidden">  
+			<div id="updateButton" style="display: none">  
 				<input id="update" onclick="filterValue()" type="button" value="UPDATE">
 			</div>
 			<div id="main" class="large" style="display: none">
@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		
-		//This is where the value of the selected filter will get stored. 
+		<!-- This is where the value of the selected filter will get stored --> 
 		<input id="filter_filterId_id" type="hidden" name="filterId" value>
 		
 		
