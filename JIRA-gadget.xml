@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 5.8"
+  <ModulePrefs title="DDI Generator 5.9"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -48,15 +48,15 @@
 		<script type="text/javascript">
 		
 			function filterValue(){
-				var id = document.getElementById('filter_filterId_id').value;
-				id = parseInt(id.replace(/[^0-9\.]/g, ''), 10);
-			//	getFilter(id);
-				window.alert(id);
+				var keep = document.getElementById('filter_filterId_id').value;
+				keep = parseInt(id.replace(/[^0-9\.]/g, ''), 10);
+			//	getFilter(keep);
+				window.alert(keep);
 			}
 			
-			funtion getFilter(id){
+			funtion getFilter(keep){
 				var url = "http://localhost:8080/rest/api/2/filter/";
-				url = url + id;
+				url = url + keep;
 				
 				//params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 			
