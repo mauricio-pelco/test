@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 7.6"
+  <ModulePrefs title="DDI Generator 7.7"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -84,15 +84,15 @@
 			}
 			
 			function extractQuery(obj){
-				window.alert("here!");
 				var jsondata = obj.data;
 				for (var key in jsondata) {
 					var value = key + ": " + jsondata[key];
+					window.alert(value);
 					var nameNode = document.createTextNode(value);
 					document.getElementById("main").appendChild(nameNode);
 					document.getElementById("main").appendChild(document.createElement("br"));
 				}
-				
+				window.alert("here final");
 				gadgets.window.adjustHeight();
 				
 			}
