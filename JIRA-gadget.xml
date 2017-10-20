@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 7.2"
+  <ModulePrefs title="DDI Generator 7.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -81,7 +81,7 @@
 				
 				window.alert("here");
 				
-				gadgets.io.makeRequest(url, extractQuery, params);
+				//gadgets.io.makeRequest(url, extractQuery, params);
 			}
 			
 			function extractQuery(obj){
