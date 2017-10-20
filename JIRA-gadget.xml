@@ -48,19 +48,6 @@
 		
 		<script type="text/javascript">
 		
-			function filterSelector(){
-				var url =  "http://localhost:8080/secure/FilterPickerPopup.jspa?showProjects=false&field=filterId"
-				var newWindow = window.open(url, "Select", "width=800, height=500, resizable, scrollbars=yes");
-				newWindow.focus();
-				showSection("updateButton");
-			}
-		
-			function filterValue(){
-				var convert = document.getElementById('filter_filterId_id').value;
-				convert = parseInt(convert.replace(/[^0-9\.]/g, ''), 10);
-				window.alert(convert);
-			}
-		
 			function showSection(section){
 				var el = document.getElementById(section);
 				el.style.display = "block";
@@ -72,8 +59,26 @@
 				el.style.display = "none";
 			}
 			
+			//open the filter selector pop-up window
+			function filterSelector(){
+				var url =  "http://localhost:8080/secure/FilterPickerPopup.jspa?showProjects=false&field=filterId"
+				var newWindow = window.open(url, "Select", "width=800, height=500, resizable, scrollbars=yes");
+				newWindow.focus();
+				showSection("updateButton");
+			}
+		
+			function filterValue(){
+				var convert = document.getElementById('filter_filterId_id').value;
+				convert = parseInt(convert.replace(/[^0-9\.]/g, ''), 10);
+				findFilter(convert);
+			}
+			
+			function findFilter(filterId){
+				window.alert(filterId);
+			
+			}
+			
 			function fetchData(){
-					
 				var params = {};
 				var url = "http://localhost:8080/rest/api/2/search?jql=issueType=Bug";
 //				url = url + escape("issuetype=Bug");
@@ -81,12 +86,6 @@
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				
 				gadgets.io.makeRequest(url, getDDI, params);
-				
-			}
-			
-			function calculateDDI(R1, R2, R3){
-				var DDI = 8*R1 + 4*R2 + R3;
-				return(DDI);
 			}
 			
 			function getDDI(obj) { 
@@ -126,6 +125,11 @@
 				showSection('main');
 			//	hideSection('drop-down');
 				gadgets.window.adjustHeight();
+			}
+			
+			function calculateDDI(R1, R2, R3){
+				var DDI = 8*R1 + 4*R2 + R3;
+				return(DDI);
 			};
 			
 			gadgets.util.registerOnLoadHandler(fetchData);
