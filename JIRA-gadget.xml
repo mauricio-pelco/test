@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 6.3"
+  <ModulePrefs title="DDI Generator 6.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -24,7 +24,8 @@
 			</div>
 		</div>
 		
-		<input id="filter_filterId_id" onclick="filterValue()" type="hidden" name="filterId" value>
+		//This is where the value of the selected filter will get stored. 
+		<input id="filter_filterId_id" type="hidden" name="filterId" value>
 		
 		
 		<style type="text/css"> 
