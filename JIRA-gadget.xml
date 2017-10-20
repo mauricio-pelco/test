@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 6.7"
+  <ModulePrefs title="DDI Generator 6.8"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -74,7 +74,9 @@
 			}
 			
 			function findFilter(filterId){
-				window.alert(filterId);
+				var url = "http://localhost:8080/rest/api/2/filter/" + filterId;
+			
+				window.alert(url);
 			
 			}
 			
