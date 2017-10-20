@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 8.2"
+  <ModulePrefs title="DDI Generator 8.3"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -12,14 +12,14 @@
   <Content type="html">
     <![CDATA[
 		
-		<div id="all" class="centered" style="display: block">
+		<div id="all" style="display: block">
 			<div id="search" style="display: block">  
 				<a href="#" onclick="filterSelector()">Saved Filters</a>
 			</div>
 			<div id="updateButton" style="display: none">  
 				<input id="update" onclick="filterValue()" type="button" value="UPDATE">
 			</div>
-			<div id="main" class="large" style="display: none">
+			<div id="main" class="centered" style="display: none">
 			
 			</div>
 		</div>
@@ -37,13 +37,10 @@
 			margin:-50px 0 0 -100px;  
 			width:100px;  
 			height:200px; 
-			}
-			
-			.large {
 			font-size:150px;
 			color:red;
-			} 
-		
+			}
+					
 		</style>	
 		
 		<script type="text/javascript">
