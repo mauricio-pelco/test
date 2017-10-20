@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 7.8"
+  <ModulePrefs title="DDI Generator 7.9"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -85,21 +85,16 @@
 			
 			function extractQuery(obj){
 				var jsondata = obj.data;
-				//for (var key in jsondata) {
-					var value = jsondata['searchUrl'];
-					window.alert(value);
-					var nameNode = document.createTextNode(value);
-					document.getElementById("main").appendChild(nameNode);
-					document.getElementById("main").appendChild(document.createElement("br"));
-				//}
-				window.alert("here final");
-				gadgets.window.adjustHeight();
+
+				var value = jsondata['searchUrl'];
+				window.alert(value);
 				
+				fetchData(value);
 			}
 			
-			function fetchData(){
+			function fetchData(value){
 				var params = {};
-				var url = "http://localhost:8080/rest/api/2/search?jql=issueType=Bug";
+				var url = value;
 //				url = url + escape("issuetype=Bug");
 				
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
@@ -151,7 +146,7 @@
 				return(DDI);
 			};
 			
-			gadgets.util.registerOnLoadHandler(fetchData);
+			gadgets.util.registerOnLoadHandler();
 			gadgets.window.adjustHeight();
 		</script>
 		
