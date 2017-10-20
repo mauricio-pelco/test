@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 8.0"
+  <ModulePrefs title="DDI Generator 8.1"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -88,6 +88,7 @@
 
 				var value = jsondata['searchUrl'];
 				window.alert(value);
+				hideSection('main');
 				
 				fetchData(value);
 			}
@@ -136,7 +137,6 @@
 				var nameNode = document.createTextNode(DDI);
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
-				hideSection('main');
 				showSection('main');
 			//	hideSection('drop-down');
 				gadgets.window.adjustHeight();
