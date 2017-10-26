@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 8.7"
+  <ModulePrefs title="DDI Generator 8.8"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -44,7 +44,13 @@
 		</style>	
 		
 		<script type="text/javascript">
-		
+			if(localStorage.storedURL){
+				fetchData(localStorage.storedURL);
+			} else {
+			
+			
+			}
+			
 			function showSection(section){
 				var el = document.getElementById(section);
 				el.style.display = "block";
@@ -85,7 +91,9 @@
 				var jsondata = obj.data;
 
 				var value = jsondata['searchUrl'];
-				window.alert(value);
+				
+				localStorage.storedURL = value;
+				window.alert(localStorage.storedURL);
 				
 				fetchData(value);
 			}
@@ -132,8 +140,6 @@
 				while (myNode.firstChild) {
 					myNode.removeChild(myNode.firstChild);
 				}
-				localStorage.setItem("DDI", DDI);
-				window.alert(localStorage.getItem("DDI"));
 				var nameNode = document.createTextNode(DDI);
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
