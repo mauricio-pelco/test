@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 8.5"
+  <ModulePrefs title="DDI Generator 8.6"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -139,7 +139,7 @@
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
 				showSection('main');
-				gadgets.window.adjustHeight(100);
+				gadgets.window.adjustHeight(150);
 			}
 			
 			function calculateDDI(R1, R2, R3){
