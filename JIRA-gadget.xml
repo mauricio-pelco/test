@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 9.3"
+  <ModulePrefs title="DDI Generator 9.4"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
 	<Require feature="dynamic-height"/>
+	<Require feature="settitle" />
+	<Require feature="setprefs" />
     <Optional feature="gadget-directory">
       <Param name="categories">JIRA</Param>
     </Optional>
