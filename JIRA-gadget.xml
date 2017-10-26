@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 9.5"
+  <ModulePrefs title="DDI Generator 9.6"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -48,6 +48,7 @@
 		<script type="text/javascript">
 			if(localStorage.storedURL){
 				fetchData(localStorage.storedURL);
+				gadgets.window.setTitle(localStorage.storedTitle);
 			} else {
 			
 			
@@ -97,6 +98,7 @@
 				name = "Saved Filter: " + name;
 				
 				localStorage.storedURL = value;
+				localStorage.storedTitle = name;
 				
 				gadgets.window.setTitle(name);
 				
