@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 9.4"
+  <ModulePrefs title="DDI Generator 9.5"
   description="Attempting to create a standalone JQL gadget" 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -93,10 +93,12 @@
 				var jsondata = obj.data;
 
 				var value = jsondata['searchUrl'];
+				var name = jsondata['name'];
+				name = "Saved Filter: " + name;
 				
 				localStorage.storedURL = value;
 				
-				gadgets.window.setTitle("My Gadget");
+				gadgets.window.setTitle(name);
 				
 				fetchData(value);
 			}
