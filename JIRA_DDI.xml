@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 1.6"
+  <ModulePrefs title="DDI Generator 1.7"
   description="Generates DDI number based on selected filter." 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -12,6 +12,7 @@
       <Param name="categories">JIRA</Param>
     </Optional>
   </ModulePrefs>
+  <UserPref name="isConfigured" datatype="hidden" default_value="true" />
   <UserPref name="refresh" display_name="Refresh Rate" datatype="enum" default_value="0"> 
 	<EnumValue value="0" display_value="Never"/>
 	<EnumValue value="20" display_value="20 Seconds"/>
