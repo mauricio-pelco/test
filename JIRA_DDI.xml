@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 1.0"
+  <ModulePrefs title="DDI Generator 1.1"
   description="Generates DDI number based on selected filter." 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -67,7 +67,7 @@
 			
 			//open the filter selector pop-up window
 			function filterSelector(){
-				var url =  "http://syseng.pelco.org/tasks/secure/FilterPickerPopup.jspa?filterView=popular&field=filterId&showProjects=false"
+				var url =  "http://localhost:8080/secure/FilterPickerPopup.jspa?showProjects=false&field=filterId"
 				var newWindow = window.open(url, "Select", "width=800, height=500, resizable, scrollbars=yes");
 				newWindow.focus();
 				showSection("updateButton");
@@ -82,7 +82,7 @@
 			
 			function findFilter(filterId){
 				var params = {};
-				var url = "http://syseng.pelco.org/tasks/rest/api/2/filter/";
+				var url = "http://localhost:8080/rest/api/2/filter/";
 				url = url + escape(filterId);
 				
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
