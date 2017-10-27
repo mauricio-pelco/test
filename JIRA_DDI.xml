@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 1.7"
+  <ModulePrefs title="DDI Generator 1.8"
   description="Generates DDI number based on selected filter." 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -51,11 +51,15 @@
 			color:red;
 			}
 					
-		</style>	
-		
+		</style>
+
+
 		<script type="text/javascript">
-		
 			var prefs = new gadgets.Prefs();
+		
+			var edit = window.parent.document.getElementById(window.frameElement.id + '-edit');
+			edit.classList.remove('hidden');
+			edit.style.display = 'none';		
 			
 			if(localStorage.storedURL){
 				fetchData(localStorage.storedURL);
