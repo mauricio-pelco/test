@@ -7,6 +7,7 @@
 	<Require feature="dynamic-height"/>
 	<Require feature="settitle" />
 	<Require feature="setprefs" />
+	<Require feature="views" />
     <Optional feature="gadget-directory">
       <Param name="categories">JIRA</Param>
     </Optional>
