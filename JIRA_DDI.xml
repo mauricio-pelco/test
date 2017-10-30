@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 2.1"
+  <ModulePrefs title="DDI Generator 2.2"
   description="Generates DDI number based on selected filter." 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -12,15 +12,14 @@
       <Param name="categories">JIRA</Param>
     </Optional>
   </ModulePrefs>
-  <UserPref name="isConfigured" datatype="hidden" default_value="false" />
   <UserPref name="refresh" display_name="Refresh Rate" datatype="enum" default_value="0"> 
 	<EnumValue value="0" display_value="Never"/>
 	<EnumValue value="20" display_value="20 Seconds"/>
 	<EnumValue value="30" display_value="30 Seconds"/>
 	<EnumValue value="60" display_value="1 Minute"/>
   </UserPref >
-  <UserPref name="filterPicked" datatype="string" /> 
-  <UserPref name="titlePicked" datatype="string" /> 
+  <UserPref name="filterPicked" datatype="hidden" /> 
+  <UserPref name="titlePicked" datatype="hidden" /> 
   <Content type="html">
     <![CDATA[
 		
@@ -114,7 +113,7 @@
 
 				var value = jsondata['searchUrl'];
 				var name = jsondata['name'];
-				name = "DDI Number				Saved Filter: " + name;
+				name = "- DDI GENERATOR - Saved Filter: " + name;
 				
 				prefs.set("filterPicked", value);
 				prefs.set("titlePicked" , name);
