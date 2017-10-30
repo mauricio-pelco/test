@@ -54,7 +54,7 @@
 			var prefs = new gadgets.Prefs();
 			var edit = window.parent.document.getElementById(window.frameElement.id + '-edit');
 			edit.classList.remove('hidden');
-			edit.style.display = 'block';	
+			edit.style.display = 'none';	
 			var storedURL = prefs.getString("filterPicked");	
 			var storedTitle = prefs.getString("titlePicked");
 			
