@@ -94,7 +94,7 @@
 			function filterValue(){
 				var convert = document.getElementById('filter_filterId_id').value;
 				convert = parseInt(convert.replace(/[^0-9\.]/g, ''), 10);
-				passes in the filter ID number to findFilter(); 
+				//passes in the filter ID number to findFilter(); 
 				findFilter(convert);
 			}
 			
