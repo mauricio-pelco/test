@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 2.0"
+  <ModulePrefs title="DDI Generator 2.1"
   description="Generates DDI number based on selected filter." 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -64,7 +64,7 @@
 			edit.style.display = 'none';	
 
 			var storedURL = prefs.getString("filterPicked");	
-			var storedTitle prefs.getString("titlePicked");
+			var storedTitle = prefs.getString("titlePicked");
 			
 			if(storedURL){
 				fetchData(storedURL);
