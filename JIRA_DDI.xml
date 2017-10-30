@@ -19,6 +19,7 @@
 	<EnumValue value="30" display_value="30 Seconds"/>
 	<EnumValue value="60" display_value="1 Minute"/>
   </UserPref >
+  <UserPref name="filterPicked" datatype="string" /> 
   <Content type="html">
     <![CDATA[
 		
@@ -48,7 +49,7 @@
 			width:100px;  
 			height:200px; 
 			font-size:150px;
-			color:red;
+			color:black;
 			}
 					
 		</style>
@@ -109,7 +110,7 @@
 
 				var value = jsondata['searchUrl'];
 				var name = jsondata['name'];
-				name = "Saved Filter: " + name;
+				name = "DDI Number				Saved Filter: " + name;
 				
 				localStorage.storedURL = value;
 				localStorage.storedTitle = name;
