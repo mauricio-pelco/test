@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="DDI Generator 2.3"
+  <ModulePrefs title="DDI GENERATOR"
   description="Generates DDI number based on selected filter." 
   author="Mauricio Munoz" 
   author_email="mauricio.pelco@gmail.com">
@@ -17,6 +17,7 @@
   <Content type="html">
     <![CDATA[
 		
+		<!-- This div holds the filter picker elements--> 
 		<div id="all" style="display: block">
 			<div id="search" style="display: block">  
 				<a href="#" onclick="filterSelector()">Saved Filters</a>
@@ -32,7 +33,7 @@
 		<!-- This is where the value of the selected filter will get stored --> 
 		<input id="filter_filterId_id" type="hidden" name="filterId" value>
 		
-		
+		<!-- CSS style to center and enlarge the displayed DDI number --> 
 		<style type="text/css"> 
 			.centered {  
 			position:absolute;
@@ -45,20 +46,20 @@
 			font-size:150px;
 			color:black;
 			}
-					
 		</style>
 
 
 		<script type="text/javascript">
+			//code to allow access of to user preference which is where the chosen filters are stored. 
 			var prefs = new gadgets.Prefs();
-		
 			var edit = window.parent.document.getElementById(window.frameElement.id + '-edit');
 			edit.classList.remove('hidden');
 			edit.style.display = 'none';	
-
 			var storedURL = prefs.getString("filterPicked");	
 			var storedTitle = prefs.getString("titlePicked");
 			
+			//If there is a filter that has been chosen and stored, display the DDI for it  
+				//else dont display any number
 			if(storedURL){
 				fetchData(storedURL);
 				gadgets.window.setTitle(storedTitle);
@@ -66,78 +67,97 @@
 			
 			}
 			
+			//shows the element that is passed in by id 
 			function showSection(section){
 				var el = document.getElementById(section);
 				el.style.display = "block";
 				el.style.fontWeight = "bold";
 			}
 			
+			//hides the element that is passed in by id
 			function hideSection(section){
 				var el = document.getElementById(section);
 				el.style.display = "none";
 			}
 			
-			//open the filter selector pop-up window
+			//opens the filter selector pop-up window
 			function filterSelector(){
 				var url =  "http://localhost:8080/secure/FilterPickerPopup.jspa?showProjects=false&field=filterId"
 				var newWindow = window.open(url, "Select", "width=800, height=500, resizable, scrollbars=yes");
 				newWindow.focus();
+				//will show the update button so the gadget can store the new selected filter
 				showSection("updateButton");
 				gadgets.window.adjustHeight();
 			}
 		
+			//extracts the filter ID number from the returned filter value 
 			function filterValue(){
 				var convert = document.getElementById('filter_filterId_id').value;
 				convert = parseInt(convert.replace(/[^0-9\.]/g, ''), 10);
+				passes in the filter ID number to findFilter(); 
 				findFilter(convert);
 			}
 			
+			//does a restful call on the filter
 			function findFilter(filterId){
 				var params = {};
 				var url = "http://localhost:8080/rest/api/2/filter/";
 				url = url + escape(filterId);
 				
+				//selects JSON as the return type from the restful call 
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				
+				//makes the request and passes in the returned JSON into the extractQuery() function
 				gadgets.io.makeRequest(url, extractQuery, params);
 			}
 			
+			//runs after the request in findFilter() is made 
 			function extractQuery(obj){
 				var jsondata = obj.data;
 
-				var value = jsondata['searchUrl'];
+				//gets the filter's issue list url from the JSON data
+				var filterURL = jsondata['searchUrl'];
+				//gets the filter's name 
 				var name = jsondata['name'];
-				name = "- DDI GENERATOR - Saved Filter: " + name;
+				name = "- DDI GENERATOR - Picked Filter: " + name;
 				
-				prefs.set("filterPicked", value);
+				//stores the name and the url into the userPrefs so that it will continue to display when
+					//the webpage is exited or reloaded 
+				prefs.set("filterPicked", filterURL);
 				prefs.set("titlePicked" , name);
 				
+				//sets the title of the gadget to the name var so that the user knows what is being displayed
 				gadgets.window.setTitle(name);
 				
-				fetchData(value);
+				fetchData(filterURL);
 			}
 			
-			function fetchData(value){
+			//fetches the data from the passed in url's issue list 
+			function fetchData(filterURL){
 				var params = {};
-				var url = value;
 				
+				//selects JSON as the return type from the restful call 
 				params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 				
-				gadgets.io.makeRequest(url, getDDI, params);
+				//makes the request and passes in the returned JSON into the getDDI() function
+				gadgets.io.makeRequest(filterURL, getDDI, params);
 			}
 			
+			//extracts the RPN custom field number from each issue to calculate the DDI number
 			function getDDI(obj) { 
 				var jsondata = obj.data;
 				var R1 = 0;
 				var R2 = 0;
 				var R3 = 0;
-				// Process returned JS object as an associative array
+				// Process returned JSON object as an associative array
 				for (var key in jsondata) {
 					var value = jsondata[key];
+					//if the value is an instance of an array, it is an issue which is where the RPN lies
 					if (value instanceof Array)
 					{
 						for (var i = 0; i < value.length ; i++)
 						{
+							//customfield_10840 is custom field for Risk Priority Number
 							var RPN = jsondata.issues[i].fields.customfield_10100;
 							if(RPN >= 6 && RPN <= 9){
 								R3++;
@@ -154,18 +174,25 @@
 					
 					}
 				}
+				//Passes in the number of R1, R2, and R3 RPNs into the calculateDDI() funtion
 				var DDI = calculateDDI(R1, R2, R3);
+				
+				//removes any previously displayed DDI numbers so that the new selection can be displayed
 				var myNode = document.getElementById("main");
 				while (myNode.firstChild) {
 					myNode.removeChild(myNode.firstChild);
 				}
+				
+				//Adds the new DDI Number into the main display element
 				var nameNode = document.createTextNode(DDI);
 				document.getElementById("main").appendChild(nameNode);
 				document.getElementById("main").appendChild(document.createElement("br"));
 				showSection('main');
+				//adjust the gadgets window size so that the whole number can be seen
 				gadgets.window.adjustHeight(150);
 			}
 			
+			//takes in the three different levels of RPN to calculate the DDI 
 			function calculateDDI(R1, R2, R3){
 				var DDI = 8*R1 + 4*R2 + R3;
 				return(DDI);
