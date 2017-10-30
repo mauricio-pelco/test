@@ -20,6 +20,7 @@
 	<EnumValue value="60" display_value="1 Minute"/>
   </UserPref >
   <UserPref name="filterPicked" datatype="string" /> 
+  <UserPref name="titlePicked" datatype="string" /> 
   <Content type="html">
     <![CDATA[
 		
@@ -60,11 +61,14 @@
 		
 			var edit = window.parent.document.getElementById(window.frameElement.id + '-edit');
 			edit.classList.remove('hidden');
-			edit.style.display = 'none';		
+			edit.style.display = 'none';	
+
+			var storedURL = prefs.getString("filterPicked");	
+			var storedTitle prefs.getString("titlePicked");
 			
-			if(localStorage.storedURL){
-				fetchData(localStorage.storedURL);
-				gadgets.window.setTitle(localStorage.storedTitle);
+			if(storedURL){
+				fetchData(storedURL);
+				gadgets.window.setTitle(storedTitle);
 			} else {
 			
 			}
@@ -112,8 +116,8 @@
 				var name = jsondata['name'];
 				name = "DDI Number				Saved Filter: " + name;
 				
-				localStorage.storedURL = value;
-				localStorage.storedTitle = name;
+				prefs.set("filterPicked", value);
+				prefs.set("titlePicked" , name);
 				
 				gadgets.window.setTitle(name);
 				
